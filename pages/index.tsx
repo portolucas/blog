@@ -4,16 +4,26 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import { GetStaticProps } from 'next'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData
+}: {
+  allPostsData: {
+    date: string
+    title: string
+    id: string
+    alt: string
+  }[]
+}) {
   return (
     <Layout home>
       <Head>
@@ -27,7 +37,6 @@ export default function Home({ allPostsData }) {
           Quer conversar? Me chama no{" "}
           <a
             href="https://www.linkedin.com/in/lucasporto21/"
-            alt="Meu Linkedin"
           >
             LinkedIn
           </a>
