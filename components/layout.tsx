@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-const name = '[Lucas Porto]'
+const name = 'Lucas Porto'
 export const siteTitle = 'Blog do Lucas Porto'
 
 export default function Layout({
